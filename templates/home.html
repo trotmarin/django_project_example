@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %} home.html {% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home.css"  %}{%endblock %}
+
+{% block content %}
+<div id="content_home">
+
+    <div id="homeimg">
+        <a href="/"><img src="{% static 'img/1.jpg' %}" style = "height:256px;"/></a>
+        <h4 style="margin: 0;">장고로 만든 웹사이트</h4>
+    </div>
+
+    <hr style="margin: 5px 0;">
+
+    <h2> 어플리케이션 선택</h2>
+
+    <table id="applist">
+        <tr>
+            <td><b><i><a href="{% url 'bookmark:index' %}">북마크</a></i></b></td>
+            <td> 너의 포스트를 작성하고 공유할 수 있습니다 </td>
+            <td class="Edit"><i><a href="#">추가</a></i></td>
+            <td class="Edit"><i><a href="#">변경</a></i></td>
+        </tr>
+
+        <tr>
+            <td><b><i><a href="{% url 'blog:index' %}">블로그</a></i></b></td>
+            <td> 너의 포스트를 작성하고 공유할 수 있습니다 </td>
+            <td class="Edit"><i><a href="#">추가</a></i></td>
+            <td class="Edit"><i><a href="#">변경</a></i></td>
+        </tr>
+
+        
+        <tr>
+            <td><b><i><a href="#">포토</a></i></b></td>
+            <td> 너의 포스트를 작성하고 공유할 수 있습니다 </td>
+            <td class="Edit"><i><a href="#">추가</a></i></td>
+            <td class="Edit"><i><a href="#">변경</a></i></td>
+        </tr>
+
+    </table>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; twkim 2019
+</div>
+
+{% endblock footer %}

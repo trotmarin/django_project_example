@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+{% block title %} post_all.html {% endblock %}
+
+{% block content %}
+
+<div id="content">
+
+{% for post in posts %}
+
+    <h2> <a href="{{ post.get_absolute_url }}"> {{ post.title }}</a></h2>
+    <p> {{post.description }}</p>
+
+{% endfor %}
+
+<br/>
+
+    <span>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}"> 이전페이지</a>
+        {% endif %}
+
+        페이지  {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number}}"> 다음페이지</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}

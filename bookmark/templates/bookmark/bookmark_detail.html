@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+
+{% block title %} 북마크 디테일 {% endblock %}
+
+{% block content %}
+
+<div id="content">
+    <h1> {{object.title }}</h1>
+    
+    <ul>
+        <li>url: <a href="{{ object.url }}">{{ object.url }}</a></li>
+    </ul>
+</div>
+
+{% endblock %}
+

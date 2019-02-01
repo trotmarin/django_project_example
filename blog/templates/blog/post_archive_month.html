@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+{% block title %} post_year_archive.html {% endblock %}
+
+
+{% block content %}
+
+<div id="content">
+
+<h1> {{ month|date:"N Y" }} 까지 포스트 아카이브22 </h1>
+
+    <ul>
+        {% for post in object_list %}
+        <li> {{ post.modify_date|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
+            <a href=" {{post.get_absolute_url }}"> {{ post.title }}  </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+{% endblock %}
